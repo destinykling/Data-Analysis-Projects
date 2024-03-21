@@ -37,3 +37,14 @@ ORDER BY `Valence_%`;
 SELECT TrackName, ArtistName, `Energy_%`
 FROM spotify
 ORDER BY `Energy_%`;
+
+-- most streamed songs
+SELECT Streams, TrackName
+FROM spotify
+ORDER BY streams DESC;
+
+-- What artist had most streams?
+SELECT ArtistName, SUM(Streams) as TotalStreams
+FROM Spotify
+GROUP BY ArtistName
+ORDER BY TotalStreams DESC;
